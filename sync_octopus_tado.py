@@ -80,10 +80,14 @@ def tado_login(username, password):
         url = tado.device_verification_url()
 
         asyncio.run(browser_login(url, username, password))
+        print(f"Login URL is {url}")
+
 
         tado.device_activation()
 
+        print("Tado login status, from device_activation_status():")
         status = tado.device_activation_status()
+        print(status)
 
     if status == "COMPLETED":
         print("Login successful")
