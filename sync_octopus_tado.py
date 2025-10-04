@@ -100,6 +100,7 @@ def send_reading_to_tado(username, password, reading):
 
     tado = tado_login(username=username, password=password)
 
+    print("Calling EIQ to set meter reading")
     result = tado.set_eiq_meter_readings(reading=int(reading))
     print(result)
 
